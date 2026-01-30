@@ -1,0 +1,13 @@
+import os 
+import shutil 
+source_folder = "C:\\Users\\chari\\Desktop\\images" 
+destination_folder = "C:\\Users\\chari\\Desktop\\jpg_images" 
+os.makedirs(destination_folder, exist_ok=True) 
+for file in os.listdir(source_folder): 
+    if file.endswith(".jpg"): 
+        shutil.copy( 
+            os.path.join(source_folder, file), 
+            os.path.join(destination_folder, file) 
+        ) 
+
+print("JPEG images extracted successfully") 
