@@ -1,0 +1,6 @@
+INFO 2026-01-30 Application started
+INFO 2026-01-30 User login successful
+ERROR 2026-01-30 Database connection failed
+WARNING 2026-01-30 Low memory
+ERROR 2026-01-30 File not found
+INFO 2026-01-30 Application stopped
