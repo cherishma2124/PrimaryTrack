@@ -1,0 +1,3 @@
+ welcome to python file handling
+this is a single file.
+this is append modeVery nice and good
