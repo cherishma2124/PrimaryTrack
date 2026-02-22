@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-3">Home Page (Items)</h2>
+
+<form method="GET" class="row g-2 mb-4">
+  <div class="col-md-4">
+    <input class="form-control" name="q" placeholder="Search item name...">
+  </div>
+  <div class="col-md-4">
+    <input class="form-control" name="category" placeholder="Filter by category...">
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-primary w-100">Search</button>
+  </div>
+</form>
+
+<div class="row">
+  {% for item in items %}
+  <div class="col-md-4 mb-3">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">
+          Category: <b>{{item.category}}</b><br>
+          Price: ₹{{item.price}}<br>
+          Stock: {{item.stock}}
+        </p>
+
+        <a href="/cart/add/{{item.id}}" class="btn btn-success w-100">
+          Add to Cart
+        </a>
+
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

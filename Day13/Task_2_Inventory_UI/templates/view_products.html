@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-3">All Products</h2>
+
+<table class="table table-bordered table-striped shadow-sm">
+  <thead class="table-dark">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Type</th>
+      <th>Extra</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for p in products %}
+    <tr>
+      <td>{{ p.get_id() }}</td>
+      <td>{{ p.get_name() }}</td>
+      <td>₹{{ p.get_price() }}</td>
+      <td>{{ p.get_stock() }}</td>
+      <td>{{ p.__class__.__name__ }}</td>
+
+      <td>
+        {% if p.__class__.__name__ == "Electronics" %}
+          Electronics item
+        {% else %}
+          Grocery item
+        {% endif %}
+      </td>
+
+      <td>
+        <a href="/delete/{{p.get_id()}}" class="btn btn-danger btn-sm">Delete</a>
+
+        <form method="POST" action="/update_stock/{{p.get_id()}}" class="mt-2">
+          <select name="mode" class="form-select form-select-sm mb-1">
+            <option value="add">Add</option>
+            <option value="remove">Remove</option>
+          </select>
+          <input name="qty" class="form-control form-control-sm mb-1" placeholder="Qty" required>
+          <button class="btn btn-primary btn-sm w-100">Update</button>
+        </form>
+      </td>
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

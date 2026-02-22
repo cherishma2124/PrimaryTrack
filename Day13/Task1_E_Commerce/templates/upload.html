@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-3">Upload Item Form</h2>
+
+<form method="POST" class="card p-4 shadow-sm">
+  <label class="form-label">Item Name</label>
+  <input class="form-control mb-3" name="name" required>
+
+  <label class="form-label">Category</label>
+  <input class="form-control mb-3" name="category" required>
+
+  <label class="form-label">Price</label>
+  <input type="number" step="0.01" class="form-control mb-3" name="price" required>
+
+  <label class="form-label">Stock</label>
+  <input type="number" class="form-control mb-3" name="stock" required>
+
+  <button class="btn btn-success">Upload Item</button>
+</form>
+
+{% endblock %}

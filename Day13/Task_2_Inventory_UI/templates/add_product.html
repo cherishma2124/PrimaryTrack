@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-3">Add Product</h2>
+
+<form method="POST" class="card p-4 shadow-sm">
+
+  <label class="form-label">Product Type</label>
+  <select class="form-select mb-3" name="ptype" required>
+    <option value="Electronics">Electronics</option>
+    <option value="Grocery">Grocery</option>
+  </select>
+
+  <label class="form-label">Product ID</label>
+  <input class="form-control mb-3" name="pid" required>
+
+  <label class="form-label">Name</label>
+  <input class="form-control mb-3" name="name" required>
+
+  <label class="form-label">Price</label>
+  <input class="form-control mb-3" name="price" required>
+
+  <label class="form-label">Stock</label>
+  <input class="form-control mb-3" name="stock" required>
+
+  <hr>
+
+  <h5>Electronics Fields</h5>
+  <label class="form-label">Brand</label>
+  <input class="form-control mb-3" name="brand">
+
+  <label class="form-label">Warranty Years</label>
+  <input class="form-control mb-3" name="warranty">
+
+  <hr>
+
+  <h5>Grocery Fields</h5>
+  <label class="form-label">Expiry Date</label>
+  <input class="form-control mb-3" name="expiry" placeholder="YYYY-MM-DD">
+
+  <button class="btn btn-success w-100">Add Product</button>
+</form>
+
+{% endblock %}

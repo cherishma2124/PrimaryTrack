@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-3">Search Product</h2>
+
+<form method="POST" class="d-flex mb-4">
+  <input class="form-control me-2" name="keyword" placeholder="Enter name or ID">
+  <button class="btn btn-primary">Search</button>
+</form>
+
+{% if results %}
+  <table class="table table-bordered shadow-sm">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in results %}
+      <tr>
+        <td>{{ p.get_id() }}</td>
+        <td>{{ p.get_name() }}</td>
+        <td>₹{{ p.get_price() }}</td>
+        <td>{{ p.get_stock() }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p class="text-muted">No results yet.</p>
+{% endif %}
+
+{% endblock %}

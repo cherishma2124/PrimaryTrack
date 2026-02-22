@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-3">Payment</h2>
+
+<div class="card p-4 shadow-sm">
+  <h4>Total Amount: ₹{{total}}</h4>
+
+  <form method="POST">
+    <label class="form-label mt-3">Card Holder Name</label>
+    <input class="form-control" name="name" required>
+
+    <label class="form-label mt-3">Card Number</label>
+    <input class="form-control" name="card" required>
+
+    <button class="btn btn-primary mt-4 w-100">
+      Pay Now
+    </button>
+  </form>
+</div>
+
+{% endblock %}

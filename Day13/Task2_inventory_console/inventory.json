@@ -1,0 +1,11 @@
+[
+    {
+        "type": "Electronics",
+        "id": "1",
+        "name": "laptop",
+        "price": 100.0,
+        "stock": 8,
+        "brand": "Lenovo",
+        "warranty_years": 3
+    }
+]

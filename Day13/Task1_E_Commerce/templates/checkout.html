@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-3">Checkout</h2>
+
+<div class="card p-4 shadow-sm">
+  <h4>Total Amount: ₹{{total}}</h4>
+
+  <form method="POST">
+    <button class="btn btn-success mt-3 w-100">
+      Continue to Payment
+    </button>
+  </form>
+</div>
+
+{% endblock %}
